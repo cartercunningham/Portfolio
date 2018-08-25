@@ -1,0 +1,10 @@
+ 
+Financial Analysis
+-----------------------------------------------
+Number of Months: 41
+Net Profit/Loss for Period: $18971412
+The average monthly change was: $-6758.975
+Greatest Increase in Profits: $1837235
+Month: Jan-16
+Greatest Decline in Profits: $-1779747
+Month: Jul-14
