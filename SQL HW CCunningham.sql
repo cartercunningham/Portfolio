@@ -103,11 +103,10 @@ ON (s.address_id = a.address_id);
 #THIS HAS NOT BEEN COMPLETED YET - LIKE 4A AS WELL
 
 SELECT first_name, last_name, sum(amount)FROM staff s
-LEFT OUTER JOIN payment p
+LEFT OUTER JOIN TRUNC(payment) P
 ON (s.staff_id = p.staff_id)
-GROUP BY first_name
-HAVING payment_date
-Like "2005-08%";
+GROUP BY first_name;
+where TRUNC(payment_date) >= '2005-08-01' and TRUNC(payment_date) <= '2005-08-31';
 
 select payment_date from payment;
 
@@ -141,12 +140,10 @@ ON (c.customer_id = p.customer_id)
 	ORDER BY
 	last_name ASC;
 
-ORDER BY LAST NAME;
 
 # 7a. The music of Queen and Kris Kristofferson have seen an unlikely resurgence. As an unintended consequence,
 # films starting with the letters `K` and `Q` have also soared in popularity. 
 # Use subqueries to display the titles of movies starting with the letters `K` and `Q` whose language is English.
-# film has language_id, 
 
 SELECT title FROM film
 WHERE title Like "q%" 
@@ -189,34 +186,45 @@ WHERE film_id IN (
         from category where name='Family'));
         
 # 7e. Display the most frequently rented movies in descending order.
-# show title, sorted by a count by inventory_id (tie back to title, somehow) and sorted by that count in descending order
-STILL NOT COMPLETE
+# show title, sorted by a count by inventory_id (tie back to title) in descending order
 
 
-SELECT title, count(inventory_id)FROM film
-WHERE film_id IN(
-	SELECT film_id
-    FROM inventory
-    WHERE inventory_id IN(
-    SELECT 
-
+select f.title, count(i.inventory_id)
+FROM film f
+JOIN inventory i ON f.film_id = i.film_ID
+JOIN rental r ON i.inventory_ID = r.inventory_id
 GROUP BY title
-ORDER BY
-count(inventory_id);
-
+ORDER BY count(r.inventory_id) DESC;
 
 # 7f. Write a query to display how much business, in dollars, each store brought in.
-# return store_id (staff), tie to and return staff_id (staff<->payment), sum(amount) (in payment table)
+
+select s.store_id, sum(p.amount) as "Store Revenue"
+FROM staff s
+JOIN payment p ON s.staff_id = p.staff_ID
+GROUP BY store_id;
 
 
 # 7g. Write a query to display for each store its store ID, city, and country.
 
-select * from store;
+select s.store_id, c.city,co.country
+FROM store s
+JOIN address a ON s.address_id = a.address_ID
+JOIN city c ON a.city_id = c.city_ID
+JOIN country co ON co.country_id = c.country_ID
+GROUP BY store_id;
 
 # 7h. List the top five genres in gross revenue in descending order. (**Hint**: you may need to use the 
 # following tables: category, film_category, inventory, payment, and rental.)
 
-
+select c.name, sum(amount) as "Revenue"
+FROM category c
+JOIN film_category fc ON c.category_id = fc.category_ID
+JOIN inventory i ON fc.film_id = i.film_ID
+JOIN rental r ON r.inventory_id = i.inventory_ID
+JOIN payment p ON r.rental_id = p.rental_ID
+GROUP BY name
+ORDER BY sum(amount) DESC
+LIMIT 5;
 
 # 8a. In your new role as an executive, you would like to have an easy way of viewing the 
 # Top five genres by gross revenue. Use the solution from the problem above to create a view. 
