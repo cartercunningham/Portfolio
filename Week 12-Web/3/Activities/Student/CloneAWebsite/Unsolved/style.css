@@ -1,0 +1,20 @@
+/* Add your styles here */
+.box {
+    min-height: 50px;
+    font-weight: 800;
+    color: #fff;
+  }
+  
+  .grey {
+    background: rgb(224, 226, 226);
+  }
+  
+  .blue {
+    background: rgb(29, 26, 189);
+  }
+  
+  .red {
+    background: indianred;
+  }
+
+

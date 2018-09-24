@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="style.css">
+  <title>Temp</title>
+</head>
+
+<body>
+<!--Navbar - for some reason the drop down won't work for me? I took the code directly from the video provided in Slack.-->
+  <div class="container" style="margin-top:10px">
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a href="index.html" class="nav-link">Home</a>
+      </li>
+      <li class="nav-item">
+        <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Plots</a>
+        <div class="dropdown-menu">
+          <a href="temp.html" class="dropdown-item">Temp</a>
+          <a href="wind.html" class="dropdown-item">Wind</a>
+          <a href="cloud.html" class="dropdown-item">Clouds</a>
+          <a href="humidity.html" class="dropdown-item">Humidity</a>
+        </div>
+        <li class="nav-item">
+          <a href="comparisons.html" class="nav-link">Comparisons</a>
+        </li>
+      </li>
+      <li class="nav-item">
+        <a href="data.html" class="nav-link">Data</a>
+      </li>
+      <li class="nav-item">
+      </li>
+    </ul>
+  </div>
+  
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  
+<!--Main Body-->
+<!-- container -->
+
+<div class="container pt-5">
+  
+  <div class="row">
+  
+    <!-- project overview -->
+    
+    <div class="col-lg-6">
+    
+      <h1>Latitude vs. Humidity</h1>
+    
+      <hr>
+    
+      <img src="Resources/assets/images/Fig2.png" height = "350" align="top">
+    
+      <p>Humidity and latitude are related in that it rains at lots of different latitudes. When it's not raining, humidity is somewhere between 0 and 100, not inclusive of 100. See clouds tab for more information.
+      </p>
+    
+    </div>
+    <!-- end project overview -->
+    
+    <!-- visualizations-->
+    
+    <div class="col">
+    
+      <h1 id="Viz">Visualizations</h1>
+    
+      <div class="row justify-content-center">
+    
+        <div class="col-lg-6 col-sm-3">
+    
+          <div class="media">
+    
+            <a href="temp.html" >
+    
+              <img class="card-img-top" src="Resources/assets/images/Fig1.png">
+    
+            </a>
+    
+          </div>
+    
+        </div>
+    
+        <div class="col-lg-6 col-sm-3">
+    
+          <div class="media">
+    
+            <a href="humidity.html" >
+    
+              <img class="card-img-top" src="Resources/assets/images/Fig2.png">
+    
+            </a>
+    
+          </div>
+    
+        </div>
+    
+        <div class="col-lg-6 col-sm-3">
+    
+          <div class="media">
+    
+            <a href="cloud.html" >
+    
+              <img class="card-img-top" src="Resources/assets/images/Fig3.png">
+    
+            </a>
+      
+          </div>
+    
+        </div>
+    
+        <div class="col-lg-6 col-sm-3">
+    
+          <div class="media">
+    
+            <a href="wind.html" >
+    
+              <img class="card-img-top" src="Resources/assets/images/Fig4.png">
+    
+            </a>
+    
+          </div>
+    
+        </div>
+    
+      </div>
+    
+    </div>
+    <!-- end visualizations -->
+  
+  </div>
+  <!-- end row -->
+    
+</div>
+<!-- end container -->
+
+</body>
+</html>

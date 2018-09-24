@@ -1,0 +1,21 @@
+/*CSS for body text, headers, and navbar*/
+
+
+#Viz {
+  padding-top: 0;
+  padding-left:20px;
+  margin-bottom: 50px;
+  color: teal;
+}
+
+h1 {
+  color:teal;
+}
+
+a {
+  color:WHITE;
+}
+
+ul {
+  background-color:teal
+}
