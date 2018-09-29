@@ -16,7 +16,7 @@ submit.on("click", function() {
   var inputValue = inputElement.property("value");
 
   console.log(inputValue);
-  console.log(people);
+  // console.log(people);
 
   var filteredData = people.filter(person => person.bloodType === inputValue);
 
